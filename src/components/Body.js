@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import Sound from "react-native-sound";
 import Circle from "./Circle";
@@ -24,33 +24,28 @@ class Body extends Component {
 
   componentDidMount() {
     Sound.setCategory("Playback");
+
     this._interval = setInterval(() => {
       if (this.state.isRunning) {
         console.log(this.props.timeInterval);
 
         if (this.props.playKey) {
-          this.playSound(
-            Platform.OS === "ios"
-              ? `${this.state.musicalKey}-sound.wav`
-              : `/Users/zacharysedefian/Projects/React-Native/musical_gen/media/${
-                  this.state.musicalKey
-                }-sound.wav`
-          );
+          this.playSound(`${this.state.musicalKey}-sound.wav`);
         } else if (this.props.playMetronome) {
-          this.playSound(
-            Platform.OS === "ios" ? `noise.wav` : `../../media/noise.wav`
-          );
+          this.playSound("click_sound.wav");
         }
 
         this.setState({
-          musicalKey: musicalKeys[getRandom(12)],
-          voicing: voicings[getRandom(5)],
-          fingerPattern: fingerPatterns[getRandom(3)],
-          stringNumber: stringNumbers[getRandom(6)]
+          musicalKey: musicalKeys[this.getRandom(12)],
+          voicing: voicings[this.getRandom(5)],
+          fingerPattern: fingerPatterns[this.getRandom(3)],
+          stringNumber: stringNumbers[this.getRandom(6)]
         });
       }
     }, this.props.timeInterval);
   }
+
+  getRandom = max => Math.floor(Math.random() * max);
 
   componentWillUnmount() {
     clearInterval(this._interval);
@@ -58,26 +53,30 @@ class Body extends Component {
 
   playSound(soundPath) {
     setTimeout(() => {
-      let currentSound = new Sound(
-        soundPath,
-        Platform.OS === "ios" ? Sound.MAIN_BUNDLE : "",
-        error => {
-          if (error) {
-            console.log("Failed to load sound", error);
-            return;
-          }
-          setTimeout(() => {
-            currentSound.play(success => {
-              if (success) {
-                console.log("Played sound successfully");
-              } else {
-                console.log("Playback failed due to audio decoding errors");
-                currentSound.reset();
-              }
-            });
-          }, 100);
+      let currentSound = new Sound(soundPath, Sound.MAIN_BUNDLE, error => {
+        if (error) {
+          console.log("Failed to load sound", error);
+          return;
         }
-      );
+
+        console.log(
+          "duration in seconds: " +
+            currentSound.getDuration() +
+            "number of channels: " +
+            currentSound.getNumberOfChannels()
+        );
+
+        setTimeout(() => {
+          currentSound.play(success => {
+            if (success) {
+              console.log("Played sound successfully");
+            } else {
+              console.log("Playback failed due to audio decoding errors");
+              currentSound.reset();
+            }
+          });
+        }, 100);
+      });
     }, this.props.delayPlayKey ? this.props.timeInterval - 1000 : 100);
   }
 
@@ -129,10 +128,6 @@ class Body extends Component {
   }
 }
 
-function getRandom(max) {
-  return Math.floor(Math.random() * max);
-}
-
 const styles = StyleSheet.create({
   mainStyle: {
     justifyContent: "center",
@@ -145,13 +140,19 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     flexDirection: "row",
     borderColor: "#ddd",
-    position: "relative"
+    position: "absolute",
+    height: 100,
+    top: Dimensions.get("window").height - Dimensions.get("window").height / 4,
+    width: Dimensions.get("window").width
   },
   largeCircleViewStyle: {
-    marginTop: 10
+    marginTop: 50
   },
   circlesViewStyle: {
-    marginTop: 5
+    marginTop: 5,
+    justifyContent: "flex-start",
+    flexDirection: "row",
+    position: "relative"
   }
 });
 

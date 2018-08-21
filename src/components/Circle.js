@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { Dimensions, View, Text, StyleSheet } from "react-native";
 
 class Circle extends Component {
   state = { text: "", large: false };
@@ -20,14 +20,15 @@ class Circle extends Component {
 
 const styles = StyleSheet.create({
   circleStyle: {
-    width: 100,
-    height: 100,
+    width: Dimensions.get("window").width / 4,
+    height: Dimensions.get("window").width / 4,
     backgroundColor: "aliceblue",
     borderWidth: 2,
-    borderRadius: 50,
+    borderRadius: Dimensions.get("window").width / 8,
     borderColor: "#000",
     borderStyle: "solid",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginRight: 4
   },
   textStyle: {
     textShadowOffset: { width: 0, height: 2 },
@@ -37,11 +38,11 @@ const styles = StyleSheet.create({
     fontSize: 24
   },
   largeCircleStyle: {
-    width: 200,
-    height: 200,
+    width: Dimensions.get("window").width / 2,
+    height: Dimensions.get("window").width / 2,
     backgroundColor: "aliceblue",
     borderWidth: 2,
-    borderRadius: 100,
+    borderRadius: Dimensions.get("window").width / 4,
     borderColor: "#000",
     borderStyle: "solid",
     justifyContent: "center"

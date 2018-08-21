@@ -13,19 +13,19 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* musical_genTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* musical_genTests.m */; };
-		1308A459212BA14F003DD72E /* G-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A426212BA14D003DD72E /* G-sound.wav */; };
-		1308A45A212BA14F003DD72E /* A-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A44D212BA14D003DD72E /* A-sound.wav */; };
-		1308A45B212BA14F003DD72E /* Db-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A44E212BA14D003DD72E /* Db-sound.wav */; };
-		1308A45C212BA14F003DD72E /* D-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A44F212BA14D003DD72E /* D-sound.wav */; };
-		1308A45D212BA14F003DD72E /* E-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A450212BA14D003DD72E /* E-sound.wav */; };
-		1308A45E212BA14F003DD72E /* B-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A451212BA14D003DD72E /* B-sound.wav */; };
-		1308A45F212BA14F003DD72E /* F-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A452212BA14E003DD72E /* F-sound.wav */; };
-		1308A460212BA14F003DD72E /* Gb-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A453212BA14E003DD72E /* Gb-sound.wav */; };
-		1308A461212BA14F003DD72E /* Ab-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A454212BA14E003DD72E /* Ab-sound.wav */; };
-		1308A462212BA14F003DD72E /* C-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A455212BA14E003DD72E /* C-sound.wav */; };
-		1308A463212BA14F003DD72E /* Eb-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A456212BA14E003DD72E /* Eb-sound.wav */; };
-		1308A464212BA14F003DD72E /* Bb-sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A457212BA14F003DD72E /* Bb-sound.wav */; };
-		1308A465212BA14F003DD72E /* noise.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A458212BA14F003DD72E /* noise.wav */; };
+		1308A473212BDAA7003DD72E /* ab_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A466212BDAA0003DD72E /* ab_sound.wav */; };
+		1308A474212BDAA7003DD72E /* b_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A467212BDAA1003DD72E /* b_sound.wav */; };
+		1308A475212BDAA7003DD72E /* c_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A468212BDAA1003DD72E /* c_sound.wav */; };
+		1308A476212BDAA7003DD72E /* d_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A469212BDAA2003DD72E /* d_sound.wav */; };
+		1308A477212BDAA7003DD72E /* eb_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A46A212BDAA2003DD72E /* eb_sound.wav */; };
+		1308A478212BDAA7003DD72E /* click_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A46B212BDAA3003DD72E /* click_sound.wav */; };
+		1308A479212BDAA7003DD72E /* f_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A46C212BDAA3003DD72E /* f_sound.wav */; };
+		1308A47A212BDAA7003DD72E /* e_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A46D212BDAA3003DD72E /* e_sound.wav */; };
+		1308A47B212BDAA7003DD72E /* a_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A46E212BDAA4003DD72E /* a_sound.wav */; };
+		1308A47C212BDAA7003DD72E /* bb_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A46F212BDAA5003DD72E /* bb_sound.wav */; };
+		1308A47D212BDAA7003DD72E /* db_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A470212BDAA5003DD72E /* db_sound.wav */; };
+		1308A47E212BDAA7003DD72E /* g_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A471212BDAA6003DD72E /* g_sound.wav */; };
+		1308A47F212BDAA7003DD72E /* gb_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1308A472212BDAA6003DD72E /* gb_sound.wav */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -348,19 +348,19 @@
 		00E356EE1AD99517003FC87E /* musical_genTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = musical_genTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* musical_genTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = musical_genTests.m; sourceTree = "<group>"; };
-		1308A426212BA14D003DD72E /* G-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "G-sound.wav"; sourceTree = "<group>"; };
-		1308A44D212BA14D003DD72E /* A-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "A-sound.wav"; sourceTree = "<group>"; };
-		1308A44E212BA14D003DD72E /* Db-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Db-sound.wav"; sourceTree = "<group>"; };
-		1308A44F212BA14D003DD72E /* D-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "D-sound.wav"; sourceTree = "<group>"; };
-		1308A450212BA14D003DD72E /* E-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "E-sound.wav"; sourceTree = "<group>"; };
-		1308A451212BA14D003DD72E /* B-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "B-sound.wav"; sourceTree = "<group>"; };
-		1308A452212BA14E003DD72E /* F-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "F-sound.wav"; sourceTree = "<group>"; };
-		1308A453212BA14E003DD72E /* Gb-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Gb-sound.wav"; sourceTree = "<group>"; };
-		1308A454212BA14E003DD72E /* Ab-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ab-sound.wav"; sourceTree = "<group>"; };
-		1308A455212BA14E003DD72E /* C-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "C-sound.wav"; sourceTree = "<group>"; };
-		1308A456212BA14E003DD72E /* Eb-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Eb-sound.wav"; sourceTree = "<group>"; };
-		1308A457212BA14F003DD72E /* Bb-sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Bb-sound.wav"; sourceTree = "<group>"; };
-		1308A458212BA14F003DD72E /* noise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noise.wav; sourceTree = "<group>"; };
+		1308A466212BDAA0003DD72E /* ab_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ab_sound.wav; sourceTree = "<group>"; };
+		1308A467212BDAA1003DD72E /* b_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = b_sound.wav; sourceTree = "<group>"; };
+		1308A468212BDAA1003DD72E /* c_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = c_sound.wav; sourceTree = "<group>"; };
+		1308A469212BDAA2003DD72E /* d_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d_sound.wav; sourceTree = "<group>"; };
+		1308A46A212BDAA2003DD72E /* eb_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = eb_sound.wav; sourceTree = "<group>"; };
+		1308A46B212BDAA3003DD72E /* click_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click_sound.wav; sourceTree = "<group>"; };
+		1308A46C212BDAA3003DD72E /* f_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = f_sound.wav; sourceTree = "<group>"; };
+		1308A46D212BDAA3003DD72E /* e_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = e_sound.wav; sourceTree = "<group>"; };
+		1308A46E212BDAA4003DD72E /* a_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a_sound.wav; sourceTree = "<group>"; };
+		1308A46F212BDAA5003DD72E /* bb_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bb_sound.wav; sourceTree = "<group>"; };
+		1308A470212BDAA5003DD72E /* db_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = db_sound.wav; sourceTree = "<group>"; };
+		1308A471212BDAA6003DD72E /* g_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = g_sound.wav; sourceTree = "<group>"; };
+		1308A472212BDAA6003DD72E /* gb_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gb_sound.wav; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* musical_gen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musical_gen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -629,19 +629,19 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				1308A44D212BA14D003DD72E /* A-sound.wav */,
-				1308A454212BA14E003DD72E /* Ab-sound.wav */,
-				1308A451212BA14D003DD72E /* B-sound.wav */,
-				1308A457212BA14F003DD72E /* Bb-sound.wav */,
-				1308A455212BA14E003DD72E /* C-sound.wav */,
-				1308A44F212BA14D003DD72E /* D-sound.wav */,
-				1308A44E212BA14D003DD72E /* Db-sound.wav */,
-				1308A450212BA14D003DD72E /* E-sound.wav */,
-				1308A456212BA14E003DD72E /* Eb-sound.wav */,
-				1308A452212BA14E003DD72E /* F-sound.wav */,
-				1308A426212BA14D003DD72E /* G-sound.wav */,
-				1308A453212BA14E003DD72E /* Gb-sound.wav */,
-				1308A458212BA14F003DD72E /* noise.wav */,
+				1308A46E212BDAA4003DD72E /* a_sound.wav */,
+				1308A466212BDAA0003DD72E /* ab_sound.wav */,
+				1308A467212BDAA1003DD72E /* b_sound.wav */,
+				1308A46F212BDAA5003DD72E /* bb_sound.wav */,
+				1308A468212BDAA1003DD72E /* c_sound.wav */,
+				1308A46B212BDAA3003DD72E /* click_sound.wav */,
+				1308A469212BDAA2003DD72E /* d_sound.wav */,
+				1308A470212BDAA5003DD72E /* db_sound.wav */,
+				1308A46D212BDAA3003DD72E /* e_sound.wav */,
+				1308A46A212BDAA2003DD72E /* eb_sound.wav */,
+				1308A46C212BDAA3003DD72E /* f_sound.wav */,
+				1308A471212BDAA6003DD72E /* g_sound.wav */,
+				1308A472212BDAA6003DD72E /* gb_sound.wav */,
 				13ED48C1212B9BDF009EA3DC /* media */,
 				13B07FAE1A68108700A75B9A /* musical_gen */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -1133,19 +1133,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1308A459212BA14F003DD72E /* G-sound.wav in Resources */,
-				1308A45A212BA14F003DD72E /* A-sound.wav in Resources */,
-				1308A45B212BA14F003DD72E /* Db-sound.wav in Resources */,
-				1308A45C212BA14F003DD72E /* D-sound.wav in Resources */,
-				1308A45D212BA14F003DD72E /* E-sound.wav in Resources */,
-				1308A45E212BA14F003DD72E /* B-sound.wav in Resources */,
-				1308A45F212BA14F003DD72E /* F-sound.wav in Resources */,
-				1308A460212BA14F003DD72E /* Gb-sound.wav in Resources */,
-				1308A461212BA14F003DD72E /* Ab-sound.wav in Resources */,
-				1308A462212BA14F003DD72E /* C-sound.wav in Resources */,
-				1308A463212BA14F003DD72E /* Eb-sound.wav in Resources */,
-				1308A464212BA14F003DD72E /* Bb-sound.wav in Resources */,
-				1308A465212BA14F003DD72E /* noise.wav in Resources */,
+				1308A473212BDAA7003DD72E /* ab_sound.wav in Resources */,
+				1308A474212BDAA7003DD72E /* b_sound.wav in Resources */,
+				1308A475212BDAA7003DD72E /* c_sound.wav in Resources */,
+				1308A476212BDAA7003DD72E /* d_sound.wav in Resources */,
+				1308A477212BDAA7003DD72E /* eb_sound.wav in Resources */,
+				1308A478212BDAA7003DD72E /* click_sound.wav in Resources */,
+				1308A479212BDAA7003DD72E /* f_sound.wav in Resources */,
+				1308A47A212BDAA7003DD72E /* e_sound.wav in Resources */,
+				1308A47B212BDAA7003DD72E /* a_sound.wav in Resources */,
+				1308A47C212BDAA7003DD72E /* bb_sound.wav in Resources */,
+				1308A47D212BDAA7003DD72E /* db_sound.wav in Resources */,
+				1308A47E212BDAA7003DD72E /* g_sound.wav in Resources */,
+				1308A47F212BDAA7003DD72E /* gb_sound.wav in Resources */,
 				13ED48C2212B9BDF009EA3DC /* media in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
