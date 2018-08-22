@@ -125,25 +125,21 @@ class Body extends Component {
 
 const styles = StyleSheet.create({
   mainStyle: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "darkgray"
   },
   buttonViewStyle: {
-    padding: 30,
     backgroundColor: "darkgray",
-    justifyContent: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
     flexDirection: "row",
-    borderColor: "#ddd"
-  },
-  largeCircleViewStyle: {
-    marginTop: 50
-  },
-  circlesViewStyle: {
-    marginTop: 5,
-    justifyContent: "flex-start",
-    flexDirection: "row",
-    position: "relative"
+    borderColor: "#ddd",
+    width: "100%",
+    height: 50,
+    bottom: 0
   }
 });
 
@@ -159,9 +155,8 @@ const mapStateToProps = state => {
   };
 };
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ circleViewUpdated }, dispatch);
-}
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ circleViewUpdated }, dispatch);
 
 export default connect(
   mapStateToProps,

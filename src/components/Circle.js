@@ -12,11 +12,11 @@ const Circle = ({ large, text }) => {
 
 const styles = StyleSheet.create({
   circleStyle: {
-    width: Dimensions.get("window").width / 4,
-    height: Dimensions.get("window").width / 4,
+    width: (Dimensions.get("window").width - 70) / 2,
+    height: (Dimensions.get("window").width - 70) / 2,
     backgroundColor: "aliceblue",
     borderWidth: 2,
-    borderRadius: Dimensions.get("window").width / 8,
+    borderRadius: (Dimensions.get("window").width - 70) / 4,
     borderColor: "#000",
     borderStyle: "solid",
     justifyContent: "center",
@@ -27,14 +27,14 @@ const styles = StyleSheet.create({
     textShadowRadius: 1,
     textShadowColor: "#bbb",
     textAlign: "center",
-    fontSize: 24
+    fontSize: 60
   },
   largeCircleStyle: {
-    width: Dimensions.get("window").width / 2,
-    height: Dimensions.get("window").width / 2,
+    width: Dimensions.get("window").width - 50,
+    height: Dimensions.get("window").width - 50,
     backgroundColor: "aliceblue",
     borderWidth: 2,
-    borderRadius: Dimensions.get("window").width / 4,
+    borderRadius: Dimensions.get("window").width / 2,
     borderColor: "#000",
     borderStyle: "solid",
     justifyContent: "center"
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     textShadowRadius: 1,
     textShadowColor: "#bbb",
     textAlign: "center",
-    fontSize: 60
+    fontSize: 150
   }
 });
 

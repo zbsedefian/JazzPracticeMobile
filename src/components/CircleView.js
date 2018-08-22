@@ -17,17 +17,30 @@ class CircleView extends Component {
       stringNumber
     } = this.props;
 
-    const { mainStyle, largeCircleViewStyle, circlesViewStyle } = styles;
+    const {
+      mainStyle,
+      largeCircleViewStyle,
+      circlesViewStyle,
+      voicingStyle,
+      fingeringStyle,
+      stringStyle
+    } = styles;
 
     return (
       <View style={mainStyle}>
-        <View style={largeCircleViewStyle}>
+        <View>
           <Circle large text={musicalKey} />
         </View>
 
-        <View style={circlesViewStyle}>
+        <View style={voicingStyle}>
           {showVoicing ? <Circle text={voicing} /> : null}
+        </View>
+
+        <View style={fingeringStyle}>
           {showFingerPattern ? <Circle text={fingerPattern} /> : null}
+        </View>
+
+        <View style={stringStyle}>
           {showStringNumber ? <Circle text={stringNumber} /> : null}
         </View>
       </View>
@@ -39,14 +52,20 @@ const styles = StyleSheet.create({
   mainStyle: {
     alignItems: "center"
   },
-  largeCircleViewStyle: {
-    marginTop: 50
+  voicingStyle: {
+    position: "absolute",
+    left: -20,
+    top: -50
   },
-  circlesViewStyle: {
-    marginTop: 5,
-    justifyContent: "flex-start",
-    flexDirection: "row",
-    position: "relative"
+  fingeringStyle: {
+    position: "absolute",
+    right: -20,
+    top: -50
+  },
+  stringStyle: {
+    position: "absolute",
+    right: -20,
+    bottom: -50
   }
 });
 

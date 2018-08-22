@@ -42,13 +42,12 @@ const Settings = ({
           <Picker
             style={{ flex: 1 }}
             selectedValue={timeInterval.toString()}
-            onValueChange={value => {
-              console.log(value, timeInterval);
+            onValueChange={value =>
               settingsUpdate({
                 prop: "timeInterval",
                 value: parseInt(value)
-              });
-            }}
+              })
+            }
           >
             <Picker.Item label="Half second" value="500" />
             <Picker.Item label="1 second" value="1000" />
@@ -190,9 +189,8 @@ const mapStateToProps = state => {
   };
 };
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ settingsUpdate }, dispatch);
-}
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ settingsUpdate }, dispatch);
 
 export default connect(
   mapStateToProps,
