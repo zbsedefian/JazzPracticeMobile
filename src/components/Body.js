@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import Sound from "react-native-sound";
 import Circle from "./Circle";
@@ -19,20 +19,21 @@ class Body extends Component {
     fingerPattern: "2-1-1",
     stringNumber: "6",
     showModal: false,
-    isRunning: false
+    isRunning: false,
+    intervalId: null
   };
 
-  componentDidMount() {
+  componentWillReceiveProps() {
     Sound.setCategory("Playback");
-  }
 
-  componentWillUpdate() {
-    this._interval = setInterval(() => {
+    const intervalId = setInterval(() => {
       if (this.state.isRunning) {
         console.log(this.props.timeInterval);
 
         if (this.props.playKey) {
-          this.playSound(`${this.state.musicalKey}-sound.wav`);
+          this.playSound(
+            `${this.state.musicalKey.toLocaleLowerCase()}_sound.wav`
+          );
         } else if (this.props.playMetronome) {
           this.playSound("click_sound.wav");
         }
@@ -45,19 +46,14 @@ class Body extends Component {
         });
       }
     }, this.props.timeInterval);
+
+    this.setState({ intervalId });
   }
 
   getRandom = max => Math.floor(Math.random() * max);
 
   componentWillUnmount() {
-    clearInterval(this._interval);
-  }
-
-  componentDidUpdate() {
-    setTimeout(
-      () => clearInterval(this._interval),
-      this.props.timeInterval + 100
-    );
+    clearInterval(this.state.intervalId);
   }
 
   playSound(soundPath) {
