@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View, Modal, Switch, Picker } from "react-native";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { Button, CardSection } from "./common";
 import { settingsUpdate } from "../actions/";
 
@@ -189,7 +190,11 @@ const mapStateToProps = state => {
   };
 };
 
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ settingsUpdate }, dispatch);
+}
+
 export default connect(
   mapStateToProps,
-  { settingsUpdate }
+  mapDispatchToProps
 )(Settings);

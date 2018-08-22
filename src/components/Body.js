@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { Dimensions, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import Sound from "react-native-sound";
-import Circle from "./Circle";
+import CircleView from "./CircleView";
 import Settings from "./Settings";
 import { Button } from "./common";
+import { circleViewUpdated } from "../actions";
 import {
   musicalKeys,
   voicings,
@@ -14,46 +16,49 @@ import {
 
 class Body extends Component {
   state = {
-    musicalKey: "C",
-    voicing: "maj7",
-    fingerPattern: "2-1-1",
-    stringNumber: "6",
     showModal: false,
     isRunning: false,
     intervalId: null
   };
 
-  componentWillReceiveProps() {
-    Sound.setCategory("Playback");
-
-    const intervalId = setInterval(() => {
-      if (this.state.isRunning) {
-        console.log(this.props.timeInterval);
-
-        if (this.props.playKey) {
-          this.playSound(
-            `${this.state.musicalKey.toLocaleLowerCase()}_sound.wav`
-          );
-        } else if (this.props.playMetronome) {
-          this.playSound("click_sound.wav");
-        }
-
-        this.setState({
-          musicalKey: musicalKeys[this.getRandom(12)],
-          voicing: voicings[this.getRandom(5)],
-          fingerPattern: fingerPatterns[this.getRandom(3)],
-          stringNumber: stringNumbers[this.getRandom(6)]
-        });
-      }
-    }, this.props.timeInterval);
-
-    this.setState({ intervalId });
+  updateCircleData() {
+    const { circleViewUpdated } = this.props;
+    circleViewUpdated({
+      prop: "musicalKey",
+      value: musicalKeys[this.getRandom(12)]
+    });
+    circleViewUpdated({
+      prop: "voicing",
+      value: voicings[this.getRandom(5)]
+    });
+    circleViewUpdated({
+      prop: "fingerPattern",
+      value: fingerPatterns[this.getRandom(3)]
+    });
+    circleViewUpdated({
+      prop: "stringNumber",
+      value: stringNumbers[this.getRandom(6)]
+    });
   }
 
   getRandom = max => Math.floor(Math.random() * max);
 
-  componentWillUnmount() {
-    clearInterval(this.state.intervalId);
+  updateView() {
+    const { timeInterval, musicalKey, playKey, playMetronome } = this.props;
+
+    const intervalId = setInterval(() => {
+      if (this.state.isRunning) {
+        console.log(timeInterval);
+
+        if (playKey)
+          this.playSound(`${musicalKey.toLocaleLowerCase()}_sound.wav`);
+        else if (playMetronome) this.playSound("click_sound.wav");
+
+        this.updateCircleData();
+      }
+    }, timeInterval);
+
+    this.setState({ intervalId });
   }
 
   playSound(soundPath) {
@@ -63,14 +68,6 @@ class Body extends Component {
           console.log("Failed to load sound", error);
           return;
         }
-
-        console.log(
-          "duration in seconds: " +
-            currentSound.getDuration() +
-            "number of channels: " +
-            currentSound.getNumberOfChannels()
-        );
-
         setTimeout(() => {
           currentSound.play(success => {
             if (success) {
@@ -85,37 +82,30 @@ class Body extends Component {
     }, this.props.delayPlayKey ? this.props.timeInterval - 1000 : 100);
   }
 
+  componentDidMount() {
+    Sound.setCategory("Playback");
+    this.updateView();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.timeInterval !== prevProps.timeInterval) {
+      clearInterval(this.state.intervalId);
+      this.updateView();
+    }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.intervalId);
+  }
+
   render() {
-    const {
-      musicalKey,
-      voicing,
-      fingerPattern,
-      stringNumber,
-      showModal,
-      isRunning
-    } = this.state;
-
-    const { showVoicing, showFingerPattern, showStringNumber } = this.props;
-
-    const {
-      mainStyle,
-      largeCircleViewStyle,
-      circlesViewStyle,
-      buttonViewStyle
-    } = styles;
+    const { showModal, isRunning } = this.state;
 
     return (
-      <View style={mainStyle}>
-        <View style={largeCircleViewStyle}>
-          <Circle large text={musicalKey} />
-        </View>
-        <View style={circlesViewStyle}>
-          {showVoicing ? <Circle text={voicing} /> : null}
-          {showFingerPattern ? <Circle text={fingerPattern} /> : null}
-          {showStringNumber ? <Circle text={stringNumber} /> : null}
-        </View>
+      <View style={styles.mainStyle}>
+        <CircleView />
 
-        <View style={buttonViewStyle}>
+        <View style={styles.buttonViewStyle}>
           <Button onPress={() => this.setState({ showModal: !showModal })}>
             Settings
           </Button>
@@ -158,24 +148,22 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => {
-  const {
-    timeInterval,
-    playMetronome,
-    playKey,
-    delayPlayKey,
-    showVoicing,
-    showFingerPattern,
-    showStringNumber
-  } = state.settings;
+  const { timeInterval, playMetronome, playKey, delayPlayKey } = state.settings;
+  const { musicalKey } = state.circleData;
   return {
     timeInterval,
     playMetronome,
     playKey,
     delayPlayKey,
-    showVoicing,
-    showFingerPattern,
-    showStringNumber
+    musicalKey
   };
 };
 
-export default connect(mapStateToProps)(Body);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ circleViewUpdated }, dispatch);
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Body);

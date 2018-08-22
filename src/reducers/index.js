@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
 import SettingsReducer from "./SettingsReducer";
+import CircleViewReducer from "./CircleViewReducer";
 
 export default combineReducers({
-  settings: SettingsReducer
+  settings: SettingsReducer,
+  circleData: CircleViewReducer
 });
