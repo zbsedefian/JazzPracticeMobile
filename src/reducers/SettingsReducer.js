@@ -3,7 +3,7 @@ import { SETTINGS_CHANGED } from "../actions/types";
 const INITIAL_STATE = {
   timeInterval: 2000,
   playMetronome: false,
-  playKey: false,
+  playKey: true,
   delayPlayKey: false,
   showVoicing: true,
   showFingerPattern: true,

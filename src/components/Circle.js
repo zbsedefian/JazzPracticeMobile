@@ -1,22 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import { Dimensions, View, Text, StyleSheet } from "react-native";
 
-class Circle extends Component {
-  state = { text: "", large: false };
-  render() {
-    return (
-      <View
-        style={this.props.large ? styles.largeCircleStyle : styles.circleStyle}
-      >
-        <Text
-          style={this.props.large ? styles.largeTextStyle : styles.textStyle}
-        >
-          {this.props.text}
-        </Text>
-      </View>
-    );
-  }
-}
+const Circle = ({ large, text }) => {
+  const { largeCircleStyle, circleStyle, largeTextStyle, textStyle } = styles;
+  return (
+    <View style={large ? largeCircleStyle : circleStyle}>
+      <Text style={large ? largeTextStyle : textStyle}>{text}</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   circleStyle: {

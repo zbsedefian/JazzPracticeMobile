@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import reducers from "./src/reducers";
 import { Header } from "./src/components/common";
 import Body from "./src/components/Body";

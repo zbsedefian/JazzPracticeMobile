@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Dimensions, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { connect } from "react-redux";
 import Sound from "react-native-sound";
 import Circle from "./Circle";
@@ -24,7 +24,9 @@ class Body extends Component {
 
   componentDidMount() {
     Sound.setCategory("Playback");
+  }
 
+  componentWillUpdate() {
     this._interval = setInterval(() => {
       if (this.state.isRunning) {
         console.log(this.props.timeInterval);
@@ -51,6 +53,13 @@ class Body extends Component {
     clearInterval(this._interval);
   }
 
+  componentDidUpdate() {
+    setTimeout(
+      () => clearInterval(this._interval),
+      this.props.timeInterval + 100
+    );
+  }
+
   playSound(soundPath) {
     setTimeout(() => {
       let currentSound = new Sound(soundPath, Sound.MAIN_BUNDLE, error => {
@@ -69,7 +78,7 @@ class Body extends Component {
         setTimeout(() => {
           currentSound.play(success => {
             if (success) {
-              console.log("Played sound successfully");
+              console.log("Sound played successfully");
             } else {
               console.log("Playback failed due to audio decoding errors");
               currentSound.reset();
@@ -139,11 +148,7 @@ const styles = StyleSheet.create({
     backgroundColor: "darkgray",
     justifyContent: "flex-start",
     flexDirection: "row",
-    borderColor: "#ddd",
-    position: "absolute",
-    height: 100,
-    top: Dimensions.get("window").height - Dimensions.get("window").height / 4,
-    width: Dimensions.get("window").width
+    borderColor: "#ddd"
   },
   largeCircleViewStyle: {
     marginTop: 50
