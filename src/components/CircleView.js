@@ -17,14 +17,7 @@ class CircleView extends Component {
       stringNumber
     } = this.props;
 
-    const {
-      mainStyle,
-      largeCircleViewStyle,
-      circlesViewStyle,
-      voicingStyle,
-      fingeringStyle,
-      stringStyle
-    } = styles;
+    const { mainStyle, voicingStyle, fingeringStyle, stringStyle } = styles;
 
     return (
       <View style={mainStyle}>
@@ -50,7 +43,8 @@ class CircleView extends Component {
 
 const styles = StyleSheet.create({
   mainStyle: {
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: -50
   },
   voicingStyle: {
     position: "absolute",

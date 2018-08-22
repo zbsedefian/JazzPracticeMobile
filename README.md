@@ -14,4 +14,4 @@ You may not use this for commercial use or profit of any kind.
 
 ## Acknowledgments
 
-- The components in the "common" folder were based on the ones taught in Stepher Grider's Udemy course on React.
+The components in the "common" folder were based on the ones taught in Stepher Grider's Udemy course on React.

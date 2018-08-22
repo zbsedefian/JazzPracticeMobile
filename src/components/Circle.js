@@ -26,8 +26,9 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 0, height: 2 },
     textShadowRadius: 1,
     textShadowColor: "#bbb",
+    color: "#000",
     textAlign: "center",
-    fontSize: 60
+    fontSize: 40
   },
   largeCircleStyle: {
     width: Dimensions.get("window").width - 50,
@@ -43,6 +44,7 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 0, height: 4 },
     textShadowRadius: 1,
     textShadowColor: "#bbb",
+    color: "#000",
     textAlign: "center",
     fontSize: 150
   }
