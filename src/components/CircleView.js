@@ -1,45 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { View, StyleSheet } from "react-native";
 import Circle from "./Circle";
 
-class CircleView extends Component {
-  state = {};
+const CircleView = ({
+  showVoicing,
+  showFingerPattern,
+  showStringNumber,
+  musicalKey,
+  voicing,
+  fingerPattern,
+  stringNumber
+}) => {
+  const { mainStyle, voicingStyle, fingeringStyle, stringStyle } = styles;
 
-  render() {
-    const {
-      showVoicing,
-      showFingerPattern,
-      showStringNumber,
-      musicalKey,
-      voicing,
-      fingerPattern,
-      stringNumber
-    } = this.props;
-
-    const { mainStyle, voicingStyle, fingeringStyle, stringStyle } = styles;
-
-    return (
-      <View style={mainStyle}>
-        <View>
-          <Circle large text={musicalKey} />
-        </View>
-
-        <View style={voicingStyle}>
-          {showVoicing ? <Circle text={voicing} /> : null}
-        </View>
-
-        <View style={fingeringStyle}>
-          {showFingerPattern ? <Circle text={fingerPattern} /> : null}
-        </View>
-
-        <View style={stringStyle}>
-          {showStringNumber ? <Circle text={stringNumber} /> : null}
-        </View>
+  return (
+    <View style={mainStyle}>
+      <View>
+        <Circle large text={musicalKey} />
       </View>
-    );
-  }
-}
+
+      <View style={voicingStyle}>
+        {showVoicing ? <Circle text={voicing} /> : null}
+      </View>
+
+      <View style={fingeringStyle}>
+        {showFingerPattern ? <Circle text={fingerPattern} /> : null}
+      </View>
+
+      <View style={stringStyle}>
+        {showStringNumber ? <Circle text={stringNumber} /> : null}
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   mainStyle: {

@@ -139,7 +139,6 @@ const Settings = ({
       </View>
     </Modal>
   );
-  // }
 };
 
 const styles = {

@@ -48,12 +48,11 @@ class Body extends Component {
 
     const intervalId = setInterval(() => {
       if (this.state.isRunning) {
-        console.log(timeInterval);
-
-        if (playKey)
+        if (playKey) {
           this.playSound(`${musicalKey.toLocaleLowerCase()}_sound.wav`);
-        else if (playMetronome) this.playSound("click_sound.wav");
-
+        } else if (playMetronome) {
+          this.playSound("click_sound.wav");
+        }
         this.updateCircleData();
       }
     }, timeInterval);
@@ -100,12 +99,13 @@ class Body extends Component {
 
   render() {
     const { showModal, isRunning } = this.state;
+    const { mainStyle, buttonViewStyle } = styles;
 
     return (
-      <View style={styles.mainStyle}>
+      <View style={mainStyle}>
         <CircleView />
 
-        <View style={styles.buttonViewStyle}>
+        <View style={buttonViewStyle}>
           <Button onPress={() => this.setState({ showModal: !showModal })}>
             Settings
           </Button>
